@@ -20,7 +20,8 @@ void getHeap(int list3[],int dimen);//process heapyfication or heap sort 1-D
 
 int main()
 {
-    int sagot, choice, arr[5], size, list[20];
+    int sagot, arr[5], size, list[20];
+    char choice;
     //add code here
     
     do{
@@ -47,8 +48,9 @@ int main()
                          getInput(list, 20);
                     
             //call getBubble function
+            getBubble(list, 20);
             //call convert2DimSort
-                    
+            convert2DimSort(list, 20);
                   
           }
             break;
@@ -102,8 +104,16 @@ void getInput(int list[],int dim)// for both option 1 and 2 only
 //////////////////////////////////////
 void convert2DimSort(int list[],int dim)
 {
-int inList[5][5];
+int inList[sizeRow][sizeCol];
       //add codehere
+      for (int i = 0; i < sizeRow; i++)
+      {
+          for (int j = 0; j < sizeCol; i++)
+          {
+              inList[i][j]=list[i+j];
+          }
+          
+      }
       
        get2DOut(inList); 
 }
@@ -120,8 +130,19 @@ void get2DOut(int list1[][sizeCol])
 }
 void getBubble(int list[],int dim)
 {
-        //solution to bubble sort
-              //add code here
+    //solution to bubble sort
+    //add code here
+    int i, j;
+    for (i = 0; i < dim; i++)
+
+        // Last i elements are already in place
+        for (j = 0; j < dim - i; j++)
+            if (list[j] > list[j + 1])
+            {
+                int temp = list[j];
+                list[j] = list[j + 1];
+                list[j + 1] = temp;
+            }
 }
 ///////////////////////////////////////////////
 void getSelect(int list[],int dim)
