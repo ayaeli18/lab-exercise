@@ -68,8 +68,12 @@ int main()
             //add code here
                      }
             break;
-        case '4': cout<<"end of program.....\n";
+        case '4':
+        {
+            cout<<"end of program.....\n";
+            cout<<"leaving the program now...."<<endl;
                   exit(1);
+        }
     }
 }
 
@@ -83,6 +87,9 @@ char getMenu(char ans)
 ////////////////////////////////////
 void getInput(int list[],int dim)// for both option 1 and 2 only
 {
+    cout<<"Enter 20 Elements \n";
+    
+    for(dim)
     //add code here
 }
 //////////////////////////////////////
@@ -127,8 +134,19 @@ void tryAgain()
 {
     do
     {
-        cout<<"Do you want to try again";
+        cout<<" ";
+        cout<<"Do you want to try again?[y/n]: ";
+        cin>>ans;
     }while (false);
     
       //add code here
 }
+
+
+/*
+*Programmer: Kasai, Elisha Aya
+*Date Created:
+*Terminal No:
+*Program:BSCS-O
+*Course / Section:CS127-8L / FOPI01
+*/
