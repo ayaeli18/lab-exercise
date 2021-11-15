@@ -104,13 +104,14 @@ void getInput(int list[],int dim)// for both option 1 and 2 only
 //////////////////////////////////////
 void convert2DimSort(int list[],int dim)
 {
-int inList[sizeRow][sizeCol];
+int inList[sizeRow][sizeCol], index = 0;
       //add codehere
       for (int i = 0; i < sizeRow; i++)
       {
-          for (int j = 0; j < sizeCol; i++)
+          for (int j = 0; j < sizeCol; j++)
           {
-              inList[i][j]=list[i+j];
+              inList[i][j]=list[index];
+              index++;
           }
           
       }
@@ -123,9 +124,27 @@ void get2DOut(int list1[][sizeCol])
     
       cout<<"Ascending Order\n";
     //add code here
+    for (int i = 0; i < sizeRow; i++)
+    {
+        for (int j = 0; j < sizeCol; j++)
+        {
+            cout<<list1[i][j]<<"\t";
+        }
+        cout<<endl;        
+    }
+    
     
      cout<<"\nDescending Order\n";
     //add code here
+    for (int k = sizeRow-1; k >= 0; k--)
+    {
+        for (int l = sizeCol-1; l >= 0; l--)
+        {
+            cout<<list1[k][l]<<"\t";
+        }
+        cout<<endl;        
+    }
+    
 ////////////////////////////////////////////
 }
 void getBubble(int list[],int dim)
@@ -133,10 +152,10 @@ void getBubble(int list[],int dim)
     //solution to bubble sort
     //add code here
     int i, j;
-    for (i = 0; i < dim; i++)
+    for (i = 0; i < dim -1; i++)
 
         // Last i elements are already in place
-        for (j = 0; j < dim - i; j++)
+        for (j = 0; j < dim - i -1; j++)
             if (list[j] > list[j + 1])
             {
                 int temp = list[j];
