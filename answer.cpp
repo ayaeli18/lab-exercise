@@ -166,6 +166,15 @@ void getBubble(int list[],int dim)
 ///////////////////////////////////////////////
 void getSelect(int list[],int dim)
 {
+    int list[20];
+    int i, j, size, list[] 
+    
+    cout<<"enter "<<size<<" numbers"<<endl;
+	  for(i=0;i<size;i++)
+	  {
+	  	 cout<<"loc["<<i<<"]:";
+	  	 cin>>list[i];
+	  }
     //solution to selection sort  
               //add code here
     
