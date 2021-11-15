@@ -1,5 +1,6 @@
 #include<iostream>
 #include<iomanip>
+#include<cctype>  
 using namespace std;
 
 //global
@@ -28,11 +29,11 @@ int main()
         
         cout<<endl
           <<"----------MENU----------"<<endl
-             <<"[1] bubble sort"<<endl
+          <<"[1] bubble sort"<<endl
           <<"[2] selection sort"<<endl
           <<"[3] heap sort"<<endl
           <<"[4] QUIT"<<endl
-          <<"----------------------------"<<endl
+          <<"------------------------"<<endl
           <<"Enter your choice: ";
         cin>>choice;
     
@@ -81,8 +82,13 @@ int main()
             cout<<"leaving the program now...."<<endl;
                   exit(1);
         }
+        return 0;
+        
+        default:
+    				cout<<choice<<" not available in the MENU option!"<<endl;
+    	}
     }
-}
+
 
 /////////////////////////////////
 char getMenu(char ans)
@@ -147,9 +153,9 @@ void get2DOut(int list1[][sizeCol])
         }
         cout<<endl;        
     }
-    
+}    
 ////////////////////////////////////////////
-}
+
 void getBubble(int list[],int dim)
 {
     //solution to bubble sort
@@ -169,18 +175,31 @@ void getBubble(int list[],int dim)
 ///////////////////////////////////////////////
 void getSelect(int list[],int dim)
 {
-    int i, j, size; 
+    int i, j, size, min, temp; 
     
     cout<<"enter "<<size<<" numbers"<<endl;
-	  for(i=0;i<size;i++)
+	  for(i=0;i<dim-1;i++)
 	  {
+	      min = i;
+	      for (j = i+1; j < dim; j++) { 
+            if (list[j] < list[min]) {
+                min = j;
+
 	  	 cout<<"loc["<<i<<"]:";
 	  	 cin>>list[i];
 	  }
+	 }
+	 temp = list[i];
+     list[i] = list[min];
+     list[min] = temp;
+
+}
+}
     //solution to selection sort  
               //add code here
     
-}
+
+
 //////////////////////////////////////////////
 void getHeap(int list3[],int dimen)
 {
@@ -193,14 +212,17 @@ void tryAgain()
     char ans;
     do
     {
-        cout<<" ";
+        cout<<" "<<endl;
         cout<<"Do you want to try again?[y/n]: ";
         cin>>ans;
-    }while (false);
-    
+        cout<<" "<<endl;
+        
       //add code here
+    }while(false);
+    
 }
 
+  
 
 /*
 *Programmer: Kasai, Elisha Aya
