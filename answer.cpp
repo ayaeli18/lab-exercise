@@ -20,7 +20,7 @@ void getHeap(int list3[],int dimen);//process heapyfication or heap sort 1-D
 
 int main()
 {
-    int sagot, choice, arr[5], size;
+    int sagot, choice, arr[5], size, list[20];
     //add code here
     
     do{
@@ -42,7 +42,9 @@ int main()
         case '1'://bubblesort
           {     
                        //add code here
+                       cout<<"Processing Bubble Sorting Technique...\n";
                          //call getInput function
+                         getInput(list, 20);
                     
             //call getBubble function
             //call convert2DimSort
@@ -89,7 +91,12 @@ void getInput(int list[],int dim)// for both option 1 and 2 only
 {
     cout<<"Enter 20 Elements \n";
     
-    for(dim)
+    for (int i = 0; i < dim; i++)
+    {
+        cout<<"loc["<<i<<"]:";
+        cin>>list[i];
+    }
+    
     //add code here
 }
 //////////////////////////////////////
@@ -132,6 +139,7 @@ void getHeap(int list3[],int dimen)
 ///////////////////////////////////////////////
 void tryAgain()
 {
+    char ans;
     do
     {
         cout<<" ";
