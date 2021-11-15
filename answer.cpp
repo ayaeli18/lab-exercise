@@ -25,7 +25,7 @@ int main()
     
     do{
         
-        cout<<endl<<endl
+        cout<<endl
           <<"----------MENU----------"<<endl
              <<"[1] bubble sort"<<endl
           <<"[2] selection sort"<<endl
