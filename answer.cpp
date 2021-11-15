@@ -58,10 +58,13 @@ int main()
             {
                 
                 //add code here
+                cout<<"Processing Selection Sorting Technique...\n";
                          //call getInput function
-                    
+                         getInput(list, 20);
             //call getSelect function
+            getSelect(list, 20);
             //call convert2DimSort
+            convert2DimSort(list, 20);
             }
             break;
         case '3'://heapsort
@@ -166,8 +169,7 @@ void getBubble(int list[],int dim)
 ///////////////////////////////////////////////
 void getSelect(int list[],int dim)
 {
-    int list[20];
-    int i, j, size, list[] 
+    int i, j, size; 
     
     cout<<"enter "<<size<<" numbers"<<endl;
 	  for(i=0;i<size;i++)
