@@ -43,11 +43,14 @@ int main()
         case '1'://bubblesort
           {     
                        //add code here
+                       cout<<"Processing Bubble Sorting Technique...\n";
                          //call getInput function
+                         getInput(list, 20);
                     
             //call getBubble function
+            getBubble(list, 20);
             //call convert2DimSort
-                    
+            convert2DimSort(list, 20);
                   
           }
             break;
@@ -90,14 +93,28 @@ void getInput(int list[],int dim)// for both option 1 and 2 only
 {
     cout<<"Enter 20 Elements \n";
     
-    for(int i = 0; i < ; i++)
+    for (int i = 0; i < dim; i++)
+    {
+        cout<<"loc["<<i<<"]:";
+        cin>>list[i];
+    }
+    
     //add code here
 }
 //////////////////////////////////////
 void convert2DimSort(int list[],int dim)
 {
-int inList[5][5];
+int inList[sizeRow][sizeCol], index = 0;
       //add codehere
+      for (int i = 0; i < sizeRow; i++)
+      {
+          for (int j = 0; j < sizeCol; j++)
+          {
+              inList[i][j]=list[index];
+              index++;
+          }
+          
+      }
       
        get2DOut(inList); 
 }
@@ -107,15 +124,44 @@ void get2DOut(int list1[][sizeCol])
     
       cout<<"Ascending Order\n";
     //add code here
+    for (int i = 0; i < sizeRow; i++)
+    {
+        for (int j = 0; j < sizeCol; j++)
+        {
+            cout<<list1[i][j]<<"\t";
+        }
+        cout<<endl;        
+    }
+    
     
      cout<<"\nDescending Order\n";
     //add code here
+    for (int k = sizeRow-1; k >= 0; k--)
+    {
+        for (int l = sizeCol-1; l >= 0; l--)
+        {
+            cout<<list1[k][l]<<"\t";
+        }
+        cout<<endl;        
+    }
+    
 ////////////////////////////////////////////
 }
 void getBubble(int list[],int dim)
 {
-        //solution to bubble sort
-              //add code here
+    //solution to bubble sort
+    //add code here
+    int i, j;
+    for (i = 0; i < dim -1; i++)
+
+        // Last i elements are already in place
+        for (j = 0; j < dim - i -1; j++)
+            if (list[j] > list[j + 1])
+            {
+                int temp = list[j];
+                list[j] = list[j + 1];
+                list[j + 1] = temp;
+            }
 }
 ///////////////////////////////////////////////
 void getSelect(int list[],int dim)
