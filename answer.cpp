@@ -175,25 +175,32 @@ void getBubble(int list[],int dim)
 ///////////////////////////////////////////////
 void getSelect(int list[],int dim)
 {
-    int i, j, size, min, temp; 
+    int i, j, size, small, temp, chk; 
     
     cout<<"enter "<<size<<" numbers"<<endl;
-	  for(i=0;i<dim-1;i++)
+	  for(i=0; i<dim-1; i++)
 	  {
-	      min = i;
-	      for (j = i+1; j < dim; j++) { 
-            if (list[j] < list[min]) {
-                min = j;
+	      chk = 0;
+	      small = list[i];
+	      for (j = i+1; j < dim; j++) 
+	      { 
+            if (small > list[j]) 
+            {
+                small = list[j];
+                chk++;
+                index = j;
 
-	  	 cout<<"loc["<<i<<"]:";
-	  	 cin>>list[i];
-	  }
-	 }
-	 temp = list[i];
-     list[i] = list[min];
-     list[min] = temp;
-
-}
+	  	       cout<<"loc["<<i<<"]:";
+	  	       cin>>list[i];
+	        }
+	      }
+	      if(chk!=0)
+	      {
+	           temp = list[i];
+               list[i] = list[min];
+               list[min] = temp;
+	      }
+       }
 }
     //solution to selection sort  
               //add code here
@@ -204,7 +211,16 @@ void getSelect(int list[],int dim)
 void getHeap(int list3[],int dimen)
 {
     //add code here
-             
+    int temp;
+    for (int i = n / 2 - 1; i >= 0; i--)
+        heapify(arr, n, i);
+    for(int i = n - 1; i >= 0; i--)
+    {
+        temp = arr[0];
+        arr[0] = arr[i];
+        arr[i] = temp;
+        heapify(arr, i, 0);
+    }
 }
 ///////////////////////////////////////////////
 void tryAgain()
