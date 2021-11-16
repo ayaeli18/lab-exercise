@@ -6,6 +6,7 @@ using namespace std;
 //global
 int i;
 int row, col;
+char choice;
 const int sizeRow = 4;
 const int sizeCol = 5;
 
@@ -17,31 +18,27 @@ void getSelect(int list[], int dim);       //perform the selection sorting
 void convert2DimSort(int list[], int dim); //convert one dimensional to 2-dimensional for both option 1 and 2
 void get2DOut(int list1[][sizeCol]);       //displaying the values in ascending and descending order 2-D
 void getHeap(int list3[], int dimen);      //process heapyfication or heap sort 1-D
-void printHeap(int list3[], int dimen);    //process display heapyfied array
+void printHeap(int arr[], int size);       //process displaying heapyfied values
+void tryAgain();       //process displaying heapyfied values
 
 int main()
 {
-    int sagot, arr[10], size = 10, list[20];
-    char choice;
+    int arr[10], size = 10, list[20];
+    char sagot;
+    choice = 'y';
     //add code here
-
     do
     {
+        /* code */
+    
+    
 
-        cout << endl
-             << "----------SORTING----------" << endl
-             << "[1] bubble sort" << endl
-             << "[2] selection sort" << endl
-             << "[3] heap sort" << endl
-             << "[4] QUIT" << endl
-             << "---------------------------" << endl
-             << "Enter your choice: ";
-        cin >> choice;
+    do
+    {        sagot = getMenu(choice);
+    cout<<sagot<<endl;
+    } while (!(sagot != '1' || sagot != '2' || sagot != '3' || sagot != '4'));
 
-        sagot = getMenu(choice);
-    } while (choice < 1);
-
-    switch (choice)
+    switch (sagot)
     {
     case '1': //bubblesort
     {
@@ -84,21 +81,33 @@ int main()
     case '4':
     {
         cout << "end of program.....\n";
-        cout << "leaving the program now...." << endl;
         exit(1);
     }
         return 0;
 
     default:
         cout << choice << " not available in the MENU option!" << endl;
+
+
+
     }
+    tryAgain();
+    } while (choice == 'y');
 }
 
 /////////////////////////////////
 char getMenu(char ans)
 {
     char result;
-    //add code here
+    cout << endl
+             << "----------SORTING----------" << endl
+             << "[1] bubble sort" << endl
+             << "[2] selection sort" << endl
+             << "[3] heap sort" << endl
+             << "[4] QUIT" << endl
+             << "---------------------------" << endl
+             << "Enter your choice: ";
+        cin >> result;
     return result;
 }
 ////////////////////////////////////
@@ -266,14 +275,15 @@ void tryAgain()
     do
     {
         
-        cout << "Do you want to try again?[y/n]: "<<endl;
+        cout << "Do you want to try again?[y/n]: ";
         cin >> ans;
 
         //add code here
     } while(ans != 'y' && ans != 'n');
     if(ans == 'n')
     {
-
+        choice = 'n';
+         cout << "leaving the program now...." << endl;
     }
 
   
