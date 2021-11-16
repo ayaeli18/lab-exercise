@@ -28,7 +28,7 @@ int main()
     {
 
         cout << endl
-             << "----------MENU----------" << endl
+             << "----------SORTING----------" << endl
              << "[1] bubble sort" << endl
              << "[2] selection sort" << endl
              << "[3] heap sort" << endl
@@ -175,7 +175,7 @@ void getSelect(int list[], int dim)
 {
     int i, j, size, small, temp, chk, index;
 
-    cout << "enter " << size << " numbers" << endl;
+    
     for (i = 0; i < dim - 1; i++)
     {
         chk = 0;
@@ -192,10 +192,17 @@ void getSelect(int list[], int dim)
                 cin >> list[i];
             }
         }
-        if (chk != 0)
+        cout<<"\nAscending Order\n";
+        for(i = 0; i < dim; i++)
         {
-           
+            cout<<list[i]<<" ";
         }
+        cout<<"\nDescending Order\n";
+        for(i = dim - 1; i >= 0; i--)
+        {
+            cout<<list[i]<<" ";
+        }
+        
     }
 }
 //solution to selection sort
