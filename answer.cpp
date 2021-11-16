@@ -17,10 +17,11 @@ void getSelect(int list[], int dim);       //perform the selection sorting
 void convert2DimSort(int list[], int dim); //convert one dimensional to 2-dimensional for both option 1 and 2
 void get2DOut(int list1[][sizeCol]);       //displaying the values in ascending and descending order 2-D
 void getHeap(int list3[], int dimen);      //process heapyfication or heap sort 1-D
+void printHeap(int list3[], int dimen);    //process display heapyfied array
 
 int main()
 {
-    int sagot, arr[5], size, list[20];
+    int sagot, arr[10], size = 10, list[20];
     char choice;
     //add code here
 
@@ -71,10 +72,13 @@ int main()
     case '3': //heapsort
     {
         //add code here
+        cout<<endl<<"Processing Heap Sorting Technique..."<<endl;
         getHeap(arr, size);
+
         cout << endl
              << "Heapyfied values ..." << endl;
         //add code here
+        printHeap(arr, size);
     }
     break;
     case '4':
@@ -209,19 +213,50 @@ void getSelect(int list[], int dim)
 //add code here
 
 //////////////////////////////////////////////
+void heapify(int arr[], int n, int i)
+{
+    int largest = i; 
+    int l = 2 * i + 1; 
+    int r = 2 * i + 2; 
+ 
+    if (l < n && arr[l] > arr[largest])
+        largest = l;
+ 
+    if (r < n && arr[r] > arr[largest])
+        largest = r;
+ 
+    if (largest != i) {
+        swap(arr[i], arr[largest]);
+ 
+        heapify(arr, n, largest);
+    }
+}
+
 void getHeap(int list3[], int dimen)
 {
+    cout<<endl<<"Enter 10 numbers"<<endl;
+    for (int i = 0; i < dimen; i++)
+    {
+        cout<<"Enter Value of list["<<i+1<<"] :";
+        cin>>list3[i];
+    }
+    
     //add code here
-    int temp, n, i, heap, heapify;
-    for (int i = n / 2 - 1; i >= 0; i--)
+     int startIdx = (dimen / 2) - 1;
 
-        for (int i = n - 1; i >= 0; i--)
-        {
-            temp = list3[0];
-            list3[0] = list3[i];
-            list3[i] = temp;
-        }
+     for (int i = startIdx; i >= 0; i--) {
+        heapify(list3, dimen, i);
+    }
 }
+
+void printHeap(int arr[], int n)
+{
+    cout << "\n";
+ 
+    for (int i = 0; i < n; ++i)
+        cout << "Arr["<<i+1<<"] :" <<arr[i] <<endl;
+}
+
 ///////////////////////////////////////////////
 void tryAgain()
 {
