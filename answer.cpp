@@ -34,7 +34,7 @@ int main()
              << "[2] selection sort" << endl
              << "[3] heap sort" << endl
              << "[4] QUIT" << endl
-             << "------------------------" << endl
+             << "---------------------------" << endl
              << "Enter your choice: ";
         cin >> choice;
 
@@ -196,6 +196,8 @@ void getSelect(int list[], int dim)
                 cin >> list[i];
             }
         }
+        swap(small, list[j]);
+
         cout<<"\nAscending Order\n";
         for(i = 0; i < dim; i++)
         {
@@ -263,13 +265,18 @@ void tryAgain()
     char ans;
     do
     {
-        cout << " " << endl;
-        cout << "Do you want to try again?[y/n]: ";
+        
+        cout << "Do you want to try again?[y/n]: "<<endl;
         cin >> ans;
-        cout << " " << endl;
 
         //add code here
-    } while (false);
+    } while(ans != 'y' && ans != 'n');
+    if(ans == 'n')
+    {
+
+    }
+
+  
 }
 
 /*
