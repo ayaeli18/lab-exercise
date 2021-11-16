@@ -175,7 +175,7 @@ void getBubble(int list[],int dim)
 ///////////////////////////////////////////////
 void getSelect(int list[],int dim)
 {
-    int i, j, size, small, temp, chk; 
+    int i, j, size, small, temp, chk, index; 
     
     cout<<"enter "<<size<<" numbers"<<endl;
 	  for(i=0; i<dim-1; i++)
@@ -197,8 +197,8 @@ void getSelect(int list[],int dim)
 	      if(chk!=0)
 	      {
 	           temp = list[i];
-               list[i] = list[min];
-               list[min] = temp;
+               list[i] = list[small];
+               list[small] = temp;
 	      }
        }
 }
@@ -211,16 +211,16 @@ void getSelect(int list[],int dim)
 void getHeap(int list3[],int dimen)
 {
     //add code here
-    int temp;
+    int temp, n, i, heap, heapify;
     for (int i = n / 2 - 1; i >= 0; i--)
-        heapify(arr, n, i);
+        
     for(int i = n - 1; i >= 0; i--)
     {
-        temp = arr[0];
-        arr[0] = arr[i];
-        arr[i] = temp;
-        heapify(arr, i, 0);
+        temp = list3[0];
+        list3[0] = list3[i];
+        list3[i] = temp;
     }
+    
 }
 ///////////////////////////////////////////////
 void tryAgain()
