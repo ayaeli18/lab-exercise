@@ -183,40 +183,19 @@ void getBubble(int list[], int dim)
 ///////////////////////////////////////////////
 void getSelect(int list[], int dim)
 {
-    int i, j, size, small, value, chk, index;
-
-    
+    int x, value, index;
     for (i = 0; i < dim - 1; i++)
     {
-        chk = 0;
-        small = list[i];
-        for (j = i + 1; j < dim; j++)
+        index = i;
+        for (x = i + 1; x < dim; x++)
         {
-            if (small > list[j])
-            {
-                small = list[j];
-                chk++;
-                index = j;
+            if (list[x] < list[index])
+                index = x;
 
-                cout << "loc[" << i << "]:";
-                cin >> list[i];
-            }
+            value = list[i];
+            list[i] = list[index];
+            list[index] = value;
         }
-        value = list[i];
-        list[i] = small;
-        small = value;
-        
-        cout<<"Ascending Order\n";
-        for(i = 0; i < dim; i++)
-        {
-            cout<<list[i]<<" ";
-        }
-        cout<<"\nDescending Order\n";
-        for(i = dim - 1; i >= 0; i--)
-        {
-            cout<<list[i]<<" ";
-        }
-        
     }
 }
 //solution to selection sort
@@ -274,16 +253,17 @@ void tryAgain()
     do
     {
         
-        cout << "Do you want to try again?[y/n]: "<<endl;
+        cout << "Do you want to try again?[y/n]: ";
         cin >> ans;
 
         //add code here
     } while(ans != 'y' && ans != 'n');
-    if(ans == 'n')
+    if(ans = 'n')
     {
         choice = 'n';
         cout << "leaving the program now...." << endl;
     }
+    else(ans == 'y')
   
 }
 
