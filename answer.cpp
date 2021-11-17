@@ -81,10 +81,6 @@ int main()
             cout << "end of program.....\n";
             exit(1);
         }
-            return 0;
-
-        default:
-            cout << choice << " not available in the MENU option!" << endl;
         }
         tryAgain();
     
@@ -257,13 +253,17 @@ void tryAgain()
         cin >> ans;
 
         //add code here
-    } while(ans != 'y' && ans != 'n');
-    if(ans = 'n')
+    } while(false);
+    if(ans == 'n')
     {
         choice = 'n';
         cout << "leaving the program now...." << endl;
     }
-    else(ans == 'y')
+    if (ans == 'y')
+    {
+        return;
+    }
+    
   
 }
 
