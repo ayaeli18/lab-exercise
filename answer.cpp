@@ -1,14 +1,14 @@
 #include <iostream>
 #include <iomanip>
-#include <cctype>
 using namespace std;
 
 //global
 int i;
 int row, col;
-char choice;
 const int sizeRow = 4;
 const int sizeCol = 5;
+char choice = 'y';
+
 
 //function
 char getMenu(char ans);                    //returns the correct choice otherwise returns -1 if not.
@@ -18,24 +18,21 @@ void getSelect(int list[], int dim);       //perform the selection sorting
 void convert2DimSort(int list[], int dim); //convert one dimensional to 2-dimensional for both option 1 and 2
 void get2DOut(int list1[][sizeCol]);       //displaying the values in ascending and descending order 2-D
 void getHeap(int list3[], int dimen);      //process heapyfication or heap sort 1-D
+void tryAgain();                           //confirm re-running of the program
 void printHeap(int arr[], int size);       //process displaying heapyfied values
-void tryAgain();                           //process displaying heapyfied values
 
 int main()
 {
-    int arr[10], size = 10, list[20];
-    char sagot;
-    choice = 'y';
     //add code here
+    int arr[10], size = 10, list[sizeRow * sizeCol];
+    signed char sagot;
     do
     {
-        /* code */
-
         do
         {
+            //add code here
             sagot = getMenu(choice);
-            cout << sagot << endl;
-        } while (!(sagot != '1' || sagot != '2' || sagot != '3' || sagot != '4'));
+        } while (sagot == -1);
 
         switch (sagot)
         {
@@ -95,7 +92,7 @@ int main()
 /////////////////////////////////
 char getMenu(char ans)
 {
-    char result;
+    signed char result;
     cout << endl
          << "----------SORTING----------" << endl
          << "[1] bubble sort" << endl
@@ -105,6 +102,12 @@ char getMenu(char ans)
          << "---------------------------" << endl
          << "Enter your choice: ";
     cin >> result;
+    if (result != '1' && result != '2' && result != '3' && result != '4')
+    {
+        result = -1;
+    }
+    
+
     return result;
 }
 ////////////////////////////////////
@@ -277,8 +280,8 @@ void tryAgain()
         cin >> ans;
 
         //add code here
-    } while (ans != 'y' && ans != 'n');
-    if (ans == 'n')
+    } while (ans != 'y' && ans != 'n' && ans != 'Y' && ans != 'N');
+    if (ans == 'n' || ans =='N')
     {
         choice = 'n';
         cout << "leaving the program now...." << endl;

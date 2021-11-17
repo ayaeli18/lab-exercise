@@ -1,193 +1,184 @@
-int main() 
+#include <iostream>
 
-{ 
+#include <iomanip>
 
-//add code here 
+using namespace std;
 
- 
+//global
 
-do{ 
+int i;
 
-//add code here 
+int row, col;
 
-  sagot=getMenu(choice); 
+const int sizeRow = 4;
 
-    }while(); 
+const int sizeCol = 5;
 
-     
+//function
 
-    { 
+char getMenu(char ans); //returns the correct choice otherwise returns -1 if not.
 
-    	case '1'://bubblesort 
+void getInput(int list[], int dim); //input for both option 1 and 2
 
-    	  {      
+void getBubble(int list[], int dim); //perform the bubble sorting
 
-    	   	        //add code here 
+void getSelect(int list[], int dim); //perform the selection sorting
 
-    	  	           //call getInput function 
+void convert2DimSort(int list[], int dim); //convert one dimensional to 2-dimensional for both option 1 and 2
 
-    	  	       
+void get2DOut(int list1[][sizeCol]); //displaying the values in ascending and descending order 2-D
 
-//call getBubble function 
+void getHeap(int list3[], int dimen); //process heapyfication or heap sort 1-D
 
-//call convert2DimSort 
+int main()
 
-                     
+{
 
-                   
+	//add code here
 
-  } 
+	do
+	{
 
-    		break; 
+		//add code here
 
-    	case '2': 
+		sagot = getMenu(choice);
 
-    		{ 
+	} while ();
 
-    			 
+	{
 
-    			//add code here 
+	case '1': //bubblesort
 
-    	  	           //call getInput function 
+	{
 
-    	  	       
+		//add code here
 
-//call getSelect function 
+		//call getInput function
 
-//call convert2DimSort 
+		//call getBubble function
 
-} 
+		//call convert2DimSort
+	}
 
-    		break; 
+	break;
 
-    	case '3'://heapsort 
+	case '2':
 
-    		         { 
+	{
 
-    		         	//add code here 
+		//add code here
 
-    		         	getHeap(arr,size); 
+		//call getInput function
 
-    		         	cout<<endl<<"Heapyfied values ..."<<endl; 
+		//call getSelect function
 
-//add code here 
+		//call convert2DimSort
+	}
 
- } 
+	break;
 
-    		break; 
+	case '3': //heapsort
 
-    	case '4': cout<<"end of program.....\n"; 
+	{
 
-    		      exit(1); 
+		//add code here
 
-} 
+		getHeap(arr, size);
 
-} 
+		cout << endl
+			 << "Heapyfied values ..." << endl;
 
- 
+		//add code here
+	}
 
-///////////////////////////////// 
+	break;
 
-char getMenu(char ans) 
+	case '4':
+		cout << "end of program.....\n";
 
-{ 
+		exit(1);
+	}
+}
 
-//add code here 
+/////////////////////////////////
 
- 
+char getMenu(char ans)
 
-} 
+{
 
-//////////////////////////////////// 
+	//add code here
+}
 
-void getInput(int list[],int dim)// for both option 1 and 2 only 
+////////////////////////////////////
 
-{ 
+void getInput(int list[], int dim) // for both option 1 and 2 only
 
-//add code here 
+{
 
-} 
+	//add code here
+}
 
-////////////////////////////////////// 
+//////////////////////////////////////
 
-void convert2DimSort(int list[],int dim) 
+void convert2DimSort(int list[], int dim)
 
-{ 
+{
 
- 
+	//add codehere
 
-  //add codehere 
+	get2DOut(inList);
+}
 
-   
+////////////////////////////////////////////////
 
-   get2DOut(inList);  
+void get2DOut(int list1[][sizeCol])
 
-} 
+{
 
-//////////////////////////////////////////////// 
+	cout << "Ascending Order\n";
 
-void get2DOut(int list1[][sizeCol]) 
+	//add code here
 
-{ 
+	cout << "\nDescending Order\n";
 
- 
+	//add code here
 
-  cout<<"Ascending Order\n"; 
+	////////////////////////////////////////////
 
-//add code here 
+	void getBubble(int list[], int dim)
 
- 
+	{
 
- cout<<"\nDescending Order\n"; 
+		//solution to bubble sort
 
-//add code here 
+		//add code here
+	}
 
-//////////////////////////////////////////// 
+	///////////////////////////////////////////////
 
-void getBubble(int list[],int dim) 
+	void getSelect(int list[], int dim)
 
-{ 
+	{
 
-//solution to bubble sort 
+		//solution to selection sort
 
-    	  	//add code here 
+		//add code here
+	}
 
-} 
+	//////////////////////////////////////////////
 
-/////////////////////////////////////////////// 
+	void getHeap(int list3[], int dimen)
 
-void getSelect(int list[],int dim) 
+	{
 
-{ 
+		//add code here
+	}
 
-//solution to selection sort   
+	///////////////////////////////////////////////
 
-    	  	//add code here 
+	void tryAgain()
 
- 
+	{
 
-} 
-
-////////////////////////////////////////////// 
-
-void getHeap(int list3[],int dimen) 
-
-{ 
-
-//add code here 
-
-  
-
-} 
-
-/////////////////////////////////////////////// 
-
-void tryAgain() 
-
-{ 
-
-  //add code here 
-
- 
-
-} 
+		//add code here
+	}
