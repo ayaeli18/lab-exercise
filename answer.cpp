@@ -22,22 +22,21 @@ void printHeap(int arr[], int size);       //process displaying heapyfied values
 
 int main()
 {
-    //add code here
+    // VARIABLE DECLARATION
     int arr[10], size = 10, list[sizeRow * sizeCol];
     signed char sagot;
     do
     {
         do
         {
-            //add code here
             sagot = getMenu(choice);
         } while (sagot != -1 && sagot != '1' && sagot != '2' && sagot != '3' && sagot != '3' && sagot != '4');
-
+        //CHOOSE FROM CASE1-4
         switch (sagot)
         {
         case '1': //bubblesort
         {
-            //add code here
+            
             cout << "Processing Bubble Sorting Technique...\n";
             //call getInput function
             getInput(list, 20);
@@ -50,7 +49,7 @@ int main()
         case '2':
         {
 
-            //add code here
+            
             cout << "Processing Selection Sorting Technique...\n";
             //call getInput function
             getInput(list, 20);
@@ -62,14 +61,14 @@ int main()
         break;
         case '3': //heapsort
         {
-            //add code here
+            
             cout << endl
                  << "Processing Heap Sorting Technique..." << endl;
             getHeap(arr, size);
             cout << endl
                  << "Heapyfied values ..." << endl;
 
-            //add code here
+            
             printHeap(arr, size);
         }
         break;
@@ -79,7 +78,7 @@ int main()
             exit(1);
         }
 
-        default:
+        default: //EXCEPT 1-4 THAT PROGRAM WILL WARNING
         {
             cout << "Not available in the MENU option!" << endl;
         }
@@ -90,9 +89,9 @@ int main()
 }
 
 /////////////////////////////////
-char getMenu(char ans)
+char getMenu(char ans) //FUNCTION FOR MENU
 {
-    //add code here
+    
     signed char result;
     // MAIN MENU
     cout << endl
@@ -114,7 +113,7 @@ char getMenu(char ans)
 ////////////////////////////////////
 void getInput(int list[], int dim) // for both option 1 and 2 only
 {
-    //add code here
+    
     cout << "Enter 20 Elements \n";
 
     for (int i = 0; i < dim; i++)
@@ -124,9 +123,9 @@ void getInput(int list[], int dim) // for both option 1 and 2 only
     }
 }
 //////////////////////////////////////
-void convert2DimSort(int list[], int dim)
+void convert2DimSort(int list[], int dim) //CONVERT 2-D INTO 1-D
 {
-    //add codehere
+    
     int inList[sizeRow][sizeCol], index = 0;
     for (int i = 0; i < sizeRow; i++)
     {
@@ -136,14 +135,14 @@ void convert2DimSort(int list[], int dim)
             index++;
         }
     }
-
+    
     get2DOut(inList);
 }
 ////////////////////////////////////////////////
-void get2DOut(int list1[][sizeCol])
+void get2DOut(int list1[][sizeCol]) // OUTPUT 2-D(ASCENDING AND DESCENDING)
 {
 
-    //add code here
+    
     cout << "Ascending Order\n";
     for (int i = 0; i < sizeRow; i++)
     {
@@ -154,7 +153,7 @@ void get2DOut(int list1[][sizeCol])
         cout << endl;
     }
 
-    //add code here
+   
     cout << "\nDescending Order\n";
     for (int k = sizeRow - 1; k >= 0; k--)
     {
@@ -167,10 +166,10 @@ void get2DOut(int list1[][sizeCol])
 }
 ////////////////////////////////////////////
 
-void getBubble(int list[], int dim)
+void getBubble(int list[], int dim) //FUNCTION FOR BUBBLE SORT
 {
     //solution to bubble sort
-    //add code here
+    
     int i, j;
     for (i = 0; i < dim - 1; i++)
 
@@ -184,10 +183,9 @@ void getBubble(int list[], int dim)
             }
 }
 ///////////////////////////////////////////////
-void getSelect(int list[], int dim)
+void getSelect(int list[], int dim) //FUNCTION DOR SELECTION SORT
 {
-    //solution to selection sort
-    //add code here
+    
     for (int i = 0; i < dim; i++)
     {
         int selector = i;
@@ -205,26 +203,26 @@ void getSelect(int list[], int dim)
 //////////////////////////////////////////////
 void heapify(int arr[], int n, int i)
 {
-    int largest = i; 
+    int largest = i; //INITIALIZE LARGEST AS ROOT
     int l = 2 * i + 1; 
     int r = 2 * i + 2; 
  
-    if (l < n && arr[l] > arr[largest])
+    if (l < n && arr[l] > arr[largest]) //IF LEFT CHILD IS LARGER THAN ROOT
         largest = l;
  
-    if (r < n && arr[r] > arr[largest])
+    if (r < n && arr[r] > arr[largest]) //IF RIGHT CHILD IS LARGER THAN LARGEST SO FAR
         largest = r;
  
-    if (largest != i) {
+    if (largest != i) {  //IF LARGEST IS NOT ROOT
         swap(arr[i], arr[largest]);
  
-        heapify(arr, n, largest);
+        heapify(arr, n, largest); //RECURSIVELY HEAPIFY THE AFFECTED SUB-TREE
     }
 }
 
-void getHeap(int list3[], int dimen)
+void getHeap(int list3[], int dimen) // MAIN FUNCTION TO DO HEAP SORT
 {
-    //add code here
+    
     cout << endl
          << "Enter 10 numbers" << endl;
     for (int i = 0; i < dimen; i++)
@@ -250,14 +248,14 @@ void getHeap(int list3[], int dimen)
 
         if (largest != i)
         {
-            swap(list3[i], list3[largest]);
+            swap(list3[i], list3[largest]); //SWAP LIST3[i] TO LIST[largest]
 
-            heapify(list3, dimen, largest);
+            heapify(list3, dimen, largest); //CALL MAX HEAPIFY ON THE REDUCED HEAP
         }
     }
 }
 
-void printHeap(int arr[], int n)
+void printHeap(int arr[], int n) //PRINT ARRAY OF SIZE N 
 {
     cout << "\n";
  
@@ -266,21 +264,21 @@ void printHeap(int arr[], int n)
 }
 
 ///////////////////////////////////////////////
-void tryAgain()
+void tryAgain() //FUNCTION THAT ASK TO USER RETRY, IF 'NO' PROGRAM IS EXIT
 {
-    //add code here
-    char ans;
+    
+    char answer;
     do
     {
-        cout << "Do you want to try again?[y/n]: ";
-        cin >> ans;
-    } while (ans != 'y' && ans != 'n' && ans != 'Y' && ans != 'N');
-    if (ans == 'n' || ans == 'N')
+        cout << "Do you want to try again?[y/n]: "; //ASK TO USER
+        cin >> answer;
+    } while (answer != 'y' && answer != 'n' && answer != 'Y' && answer != 'N');
+    if (answer == 'n' || answer == 'N')
     {
         choice = 'n';
         cout << "leaving the program now...." << endl;
     }
-    if (ans == 'y')
+    if (answer == 'y' || answer == 'Y') //IF 'Y/y' GO RETURN TO MENU
     {
         return;
     }
@@ -291,7 +289,7 @@ void tryAgain()
 /*
 *Programmer: Kasai, Elisha Aya
 *Date Created:
-*Terminal No:
+*Terminal No:00
 *Program:BSCS-O
 *Course / Section:CS127-8L / FOPI01
 */
