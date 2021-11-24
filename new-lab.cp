@@ -125,17 +125,31 @@ system("cls");
 		//add code here
 		while(true){
 
-		try{
+			try
+			{
 				//add code here
 				cout << ""
-		}//end try
-		catch(double e)
-		{
-			//add code here
-			cerr << 
-		}//end catch
-		     
-		     //add code here
+
+					if (!cin) throw -1.0;
+				else if (miles < 100 || miles > 250) throw miles;
+				else
+				{
+					*(milPtr + ctr) = miles;
+					break;
+				}
+			} //end try
+			catch (double e)
+			{
+				//add code here
+				cerr << " is invalid!.. 100-250 only" if (e != -1.0)
+							cerr
+					 << ": " << e;
+				cerr << "\nreenter a new value \n\n";
+				cin.clear();
+				cin.ignore(100, '\n');
+			} //end catch
+
+			 //add code here
 
 		}//end while
 	}//loop for miles
