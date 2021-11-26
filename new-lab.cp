@@ -90,6 +90,11 @@ char getChoice(char *ch)
 void getInput(double *input)
 {
     cout << "enter 10 grades \n";
+	for(i = 0; i << size; i++)
+	{
+		cout << "["<<i<<"]:";
+		cin >> *(input+i);
+	}
 	  //add code here
 }
 /////////////////////////////
@@ -104,6 +109,15 @@ double getSum(double *sum)
 double getLow(double *low)
 {
 	double baba;
+
+	baba= *(low+0);
+	
+
+	for(i=0; i<size; i++)
+	{
+		if(*(low+i)< baba)
+		baba= *(low+i);
+	}
 	
 	//add code here
 	return baba;
