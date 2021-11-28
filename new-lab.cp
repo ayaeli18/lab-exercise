@@ -185,6 +185,12 @@ cout<<"GALLONS\n";
 		catch(double e)
 		{
 			//add code here
+			cerr << " is invalid!.. 5-25 only";
+			if (m != -1.0)
+			cerr << ": " << e;
+			cerr << "\nreenter a new value\n\n";
+			cin.clear()
+			cin.ignore(100, '\n');
 		}//end catch
 		     
 		     //add code here
