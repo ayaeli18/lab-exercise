@@ -53,11 +53,11 @@ int main()
 			cout << "enter " << size << " grades" << endl;
 			getInput(grade);
 
-			cout << "\nsum = " << total +=(gsum + i); //getsum
+			cout << "\nsum = " << choice = getSum(grade); //getsum
 
-			cout << "\nlowest = " << +=(glow + i);//getLow
+			cout << "\nlowest = " << choice = getLow(grade);//getLow
 
-			cout << "\naverage = " << +=();
+			cout << "\naverage = " << answer =average(grade);
 			//NOTE ALL CODES MUST USE pointer variables –input,process and //output
 		}
 		break;
