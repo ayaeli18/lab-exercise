@@ -43,6 +43,7 @@ int main()
 			double *plow, *psum, *pave;
 			double gsum, glow;
 			double ave;
+			double total;
 
 			system("cls");
 			//add declaration here
@@ -53,11 +54,11 @@ int main()
 			cout << "enter " << size << " grades" << endl;
 			getInput(grade);
 
-			cout << "\nsum = " << choice = getSum(grade); //getsum
+			cout << "\nsum = " << total = getSum(grade); //getsum
 
-			cout << "\nlowest = " << choice = getLow(grade);//getLow
+			cout << "\nlowest = " <<  = getLow(grade);//getLow
 
-			cout << "\naverage = " << answer =average(grade);
+			cout << "\naverage = " << ave = average(grade);
 			//NOTE ALL CODES MUST USE pointer variables –input,process and //output
 		}
 		break;
