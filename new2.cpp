@@ -57,7 +57,7 @@ int main()
 
 			cout << "\nlowest = " << getLow(grade); //getLow
 
-			cout << "\naverage = " << (grade);
+			cout << "\naverage = " << getAve(grade);
 			//NOTE ALL CODES MUST USE pointer variables –input,process and //output
 		}
 		break;
@@ -104,6 +104,7 @@ char getChoice(char *ch)
 		return result;
 	}
 
+  return result;
 	//add code here
 }
 //////////////////////////////
@@ -134,10 +135,10 @@ double getSum(double *sum)
 	for (i = 0; i < size; i++)
 	{
 
-		if (*(sum + i)　> add)
-			add　= *(sum + i);
-		return add;
+		if (*(sum + i) > add)
+			add = *(sum + i);
 	}
+   return add;
 }
 ////////////////////////////////
 double getLow(double *low)
@@ -167,7 +168,7 @@ void MperG()
 	system("cls");
 	//add code here
 	cout << "\nCOMPUTING FOR MPG : miles per gallon...\n";
-	bool while ()
+	while ()
 	{
 		cout << "Specify the size of the array: ";
 		cin >> size;
