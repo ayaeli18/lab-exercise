@@ -57,7 +57,7 @@ int main()
 
 			cout << "\nlowest = " << +=(glow + i);//getLow
 
-			cout << "\naverage = " <<
+			cout << "\naverage = " << +=();
 			//NOTE ALL CODES MUST USE pointer variables –input,process and //output
 		}
 		break;
