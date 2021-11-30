@@ -135,14 +135,14 @@ double getSum(double *sum)
 	double add = 0;
 	//add code here
 
-     ptr2= *(ptr1+0);
-	for(i=0;i<size;i++)
-		{
-			//high
-			if( *(ptr1+i)　> *ptr2)  //num[0]>high
-			  ptr2　= *(ptr1+i);
-	return add;
-}
+	add = *(sum + 0);
+	for (i = 0; i < size; i++)
+	{
+		
+		if (*(sum + i)　> add)
+			add　= *(sum + i);
+		return add;
+	}
 }
 ////////////////////////////////
 double getLow(double *low)
@@ -163,7 +163,7 @@ double getLow(double *low)
 /////////////////////////
 void MperG()
 {
-	double miles[size];
+	double miles[size], gallons, miles;
 	int ctr;
 	pointers milPtr, galPtr;
 	int msize;
@@ -185,8 +185,8 @@ void MperG()
 			try
 			{
 				//add code here
-				cout << "miles[number]:";
-				cin >> *miles;
+				cout << "miles["<< ctr <<"]:";
+				cin >> *(miles + ctr);
 
 				if (!cin)
 					throw -1.0;
@@ -224,13 +224,12 @@ void MperG()
 		{
 			//add code here
 			cout << "gallons[" << ctr << "]: ";
-			cin >> ctr;
+			cin >> *(gallons + ctr);
 			try
 			{
 
 				//add code here
-				cout << "gallons[number]: ";
-				cin >> gallons;
+		
 
 				if (!cin)
 					throw -1.0;
@@ -268,7 +267,7 @@ void MilesPerrGallon(double *ptr1, double *ptr2, int sz)
 	double mpg[sz];
 	pointers mpgPtr;
 	int index;
-	//HINT!! _____=&______;
+	
 	for (int sz = 0; sz < size; sz++)
 	{
 		*(mpgPtr + sz) = *(ptr1 + sz) / *(ptr2 + sz);
