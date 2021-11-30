@@ -15,11 +15,6 @@ double getSum(double *sum);	  //compute for the sum of 10 grades
 //choices and try again
 char getChoice(char *ch); //display the menu of choices and input the choice of the user
 
-//miles per gallon
-void MilesPerrGallon(double *ptr1, double *ptr2, int sz); //final output of the computer miles
-//and gallons
-void MperG(); //prompts the user to specify the size of the array for miles and gallons
-//verify and validate the input for miles and gallons using exception handling
 
 int main()
 {
@@ -27,7 +22,7 @@ int main()
 	//add only declaration here
      
 	char opt, choice, answer;
-	char *chr;
+	char* chr;
 	do
 	{
 
@@ -57,12 +52,12 @@ int main()
 
 			cout << "\nlowest = " << getLow(grade); //getLow
 
-			cout << "\naverage = " << getAve(grade);
+			cout << "\naverage = " << getSum(grade)/10;
 			//NOTE ALL CODES MUST USE pointer variables –input,process and //output
 		}
 		break;
 		case '2':
-			MperG();
+			
 			break;
 		case '3':
 			cout << "goodbye for now....\n";
@@ -85,7 +80,7 @@ int main()
 	return 0;
 }
 ///////////////////////////
-char getChoice(char *ch)
+char getChoice(char *chr)
 {
 	char result;
 	cout << endl
@@ -101,9 +96,9 @@ char getChoice(char *ch)
 	cin >> result;
 	if (result != '1' && result != '2' && result != '3')
 	{
-		return result;
+		getChoice(chr);
 	}
-
+	*chr = result;
   return result;
 	//add code here
 }
@@ -157,120 +152,3 @@ double getLow(double *low)
 	return baba;
 }
 /////////////////////////
-void MperG()
-{
-	double miles[size];
-	double gallons[size];
-	int ctr;
-	pointers milPtr, galPtr;
-	int msize;
-
-	system("cls");
-	//add code here
-	cout << "\nCOMPUTING FOR MPG : miles per gallon...\n";
-	while ()
-	{
-		cout << "Specify the size of the array: ";
-		cin >> size;
-	}
-	for (ctr = 0; ctr < msize; ctr++)
-	{
-		//add code here
-		while (true)
-		{
-
-			try
-			{
-				//add code here
-				cout << "miles[" << ctr << "]:";
-				cin >> *(miles + ctr);
-
-				if (!cin)
-					throw -1.0;
-				else if (miles < 100 || miles > 250)
-					throw miles;
-				else
-				{
-					*(milPtr + ctr) = miles;
-					break;
-				}
-			} //end try
-			catch (double e)
-			{
-				//add code here
-				cout << " size 5-15 only";
-				continue;
-			} //end catch
-
-			//add code here
-
-		} //end while
-	}	  //loop for miles
-
-	/*********************************************************/
-	cout << "GALLONS\n";
-
-	for (ctr = 0; ctr < msize; ctr++)
-	{
-		bool ans = true;
-		while (ans)
-		{
-			//add code here
-			cout << "gallons[" << ctr << "]: ";
-			cin >> *(gallons + ctr);
-			try
-			{
-
-				//add code here
-
-				if (!cin)
-					throw -1.0;
-				else if (gallons < 5 || gallons > 25)
-					throw gallons;
-				else
-				{
-					*(galPtr + ctr) = gallons;
-					break;
-				}
-
-			} //end try
-			catch (double e)
-			{
-				//add code here
-				cout << " is invalid!.. 5-25 only";
-				if (e != -1.0)
-					cerr << ": " << e;
-				cout << "\nreenter a new value\n\n";
-				cin.clear();
-				cin.ignore(100, '\n');
-			} //end catch
-
-			//add code here
-		} //end while
-	}	  //loop for gallons
-
-	MilesPerrGallon(milPtr, galPtr, msize);
-}
-////////////
-////////////
-void MilesPerrGallon(double *ptr1, double *ptr2, int sz)
-{
-
-	double mpg[sz];
-	pointers mpgPtr;
-	int index;
-
-	for (int sz = 0; sz < size; sz++)
-	{
-		*(mpgPtr + sz) = *(ptr1 + sz) / *(ptr2 + sz);
-	}
-
-	cout << showpoint << fixed << setprecision(2);
-	cout << "\nmiles     /       gallon   =       MPG\n";
-
-	for (int i = 0; i < size; i++)
-	{
-		cout << *(ptr1 + i) << "/    \t  " << *(ptr2 + i)
-			 << "\t   = " << *(mpgPtr + i) << "       \n";
-	}
-}
