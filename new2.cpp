@@ -25,7 +25,7 @@ int main()
 {
 
 	//add only declaration here
-
+     
 	char opt, choice, answer;
 	char *chr;
 	do
@@ -43,8 +43,7 @@ int main()
 			double *plow, *psum, *pave;
 			double gsum, glow;
 			double ave;
-			double total;
-
+           
 			system("cls");
 			//add declaration here
 
@@ -54,11 +53,11 @@ int main()
 			cout << "enter " << size << " grades" << endl;
 			getInput(grade);
 
-			cout << "\nsum = " << total = getSum(grade); //getsum
+			cout << "\nsum = " << getSum(grade); //getsum
 
-			cout << "\nlowest = " <<  = getLow(grade);//getLow
+			cout << "\nlowest = " << getLow(grade); //getLow
 
-			cout << "\naverage = " << ave = average(grade);
+			cout << "\naverage = " << (grade);
 			//NOTE ALL CODES MUST USE pointer variables –input,process and //output
 		}
 		break;
@@ -73,43 +72,37 @@ int main()
 		}
 
 		//Add code here
-	
 
-	do{
-		cout << "\nDo you want to try again?[y/n]: ";
+	} while (choice == 'y');
+	do
+	{
+		cout << "Do you want to try again?[y/n]: ";
 		cin >> answer;
-	}while (answer != 'y' && answer != 'n' && answer !='Y' && answer != 'N');
-    if (answer == 'n' || answer == 'N')
-    {
-        choice = 'n';
-        cout << "leaving the program now...." << endl;
-    }
-    if (answer == 'y' || answer == 'Y') //IF 'Y/y' GO RETURN TO MENU
-    {
-       cout << endl;
+	} while (answer == 'n' && answer == 'N');
+
+	cout << endl;
 	system("pause");
 	return 0;
-    }
-    
-
-
 }
 ///////////////////////////
 char getChoice(char *ch)
 {
 	char result;
 	cout << endl
-		 << "<<<<<<<<<<MENU>>>>>>>>>>\n" << endl
-		 << "[1] score of 10 quizzes\n" << endl
-		 << "[2] miles per gallon\n" << endl
-		 << "[3] to quit\n" << endl
+		 << "<<<<<<<<<<MENU>>>>>>>>>>\n"
+		 << endl
+		 << "[1] score of 10 quizzes\n"
+		 << endl
+		 << "[2] miles per gallon\n"
+		 << endl
+		 << "[3] to quit\n"
+		 << endl
 		 << "enter your choice:　";
 	cin >> result;
 	if (result != '1' && result != '2' && result != '3')
-    {
-       return result;
-    }
-	
+	{
+		return result;
+	}
 
 	//add code here
 }
@@ -134,12 +127,13 @@ void getInput(double *input)
 double getSum(double *sum)
 {
 	double add = 0;
+
 	//add code here
 
 	add = *(sum + 0);
 	for (i = 0; i < size; i++)
 	{
-		
+
 		if (*(sum + i)　> add)
 			add　= *(sum + i);
 		return add;
@@ -164,7 +158,8 @@ double getLow(double *low)
 /////////////////////////
 void MperG()
 {
-	double miles[size], gallons, miles;
+	double miles[size];
+	double gallons[size];
 	int ctr;
 	pointers milPtr, galPtr;
 	int msize;
@@ -175,7 +170,7 @@ void MperG()
 	bool while ()
 	{
 		cout << "Specify the size of the array: ";
-		cin >>
+		cin >> size;
 	}
 	for (ctr = 0; ctr < msize; ctr++)
 	{
@@ -186,7 +181,7 @@ void MperG()
 			try
 			{
 				//add code here
-				cout << "miles["<< ctr <<"]:";
+				cout << "miles[" << ctr << "]:";
 				cin >> *(miles + ctr);
 
 				if (!cin)
@@ -202,12 +197,8 @@ void MperG()
 			catch (double e)
 			{
 				//add code here
-				cout << " is invalid!.. 100-250 only\n";
-				if (e != -1.0)
-
-				cout << "\nreenter a new value \n\n";
-				cin.clear();
-				cin.ignore(100, '\n');
+				cout << " size 5-15 only";
+				continue;
 			} //end catch
 
 			//add code here
@@ -230,7 +221,6 @@ void MperG()
 			{
 
 				//add code here
-		
 
 				if (!cin)
 					throw -1.0;
@@ -251,7 +241,7 @@ void MperG()
 					cerr << ": " << e;
 				cout << "\nreenter a new value\n\n";
 				cin.clear();
-					cin.ignore(100, '\n');
+				cin.ignore(100, '\n');
 			} //end catch
 
 			//add code here
@@ -268,7 +258,7 @@ void MilesPerrGallon(double *ptr1, double *ptr2, int sz)
 	double mpg[sz];
 	pointers mpgPtr;
 	int index;
-	
+
 	for (int sz = 0; sz < size; sz++)
 	{
 		*(mpgPtr + sz) = *(ptr1 + sz) / *(ptr2 + sz);
@@ -276,10 +266,10 @@ void MilesPerrGallon(double *ptr1, double *ptr2, int sz)
 
 	cout << showpoint << fixed << setprecision(2);
 	cout << "\nmiles     /       gallon   =       MPG\n";
-	
+
 	for (int i = 0; i < size; i++)
 	{
 		cout << *(ptr1 + i) << "/    \t  " << *(ptr2 + i)
-             << "\t   = " << *(mpgPtr + i) << "       \n";
+			 << "\t   = " << *(mpgPtr + i) << "       \n";
 	}
 }
