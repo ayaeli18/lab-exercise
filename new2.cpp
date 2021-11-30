@@ -71,7 +71,7 @@ int main()
 	} while (choice == 'y');
 	do
 	{
-		cout << "Do you want to try again?[y/n]: ";
+		cout << "\nDo you want to try again?[y/n]: ";
 		cin >> answer;
 	} while (answer == 'n' && answer == 'N');
 
@@ -84,13 +84,13 @@ char getChoice(char *chr)
 {
 	char result;
 	cout << endl
-		 << "<<<<<<<<<<MENU>>>>>>>>>>\n"
+		 << "<<<<<<<<<<MENU>>>>>>>>>>"
 		 << endl
-		 << "[1] score of 10 quizzes\n"
+		 << "[1] score of 10 quizzes"
 		 << endl
-		 << "[2] miles per gallon\n"
+		 << "[2] miles per gallon"
 		 << endl
-		 << "[3] to quit\n"
+		 << "[3] to quit"
 		 << endl
 		 << "enter your choice:　";
 	cin >> result;
@@ -106,7 +106,7 @@ char getChoice(char *chr)
 void getInput(double *input)
 {
 	cout << "enter 10 grades \n";
-	for (i = 0; i << size; i++)
+	for (i = 0; i < size; i++)
 	{
 		cout << "grade[" << i << "]:";
 		cin >> *(input + i);
