@@ -70,20 +70,20 @@ int main()
 		}
 
 		//Add code here
-        } while (*chr != 'n');
+	
 
-		do
-		{
-			cout << "\nDo you want to try again?[y/n]: ";
-			cin >> *chr;
-			*chr = tolower(*chr);
-		} while (*chr == 'n' && *chr == 'N');
-
-} while (*chr == 'y');
-			cout
-		<< endl;
-	system("pause");
-	return 0;
+	do
+	{
+		cout << "\nDo you want to try again?[y/n]: ";
+		cin >> *chr;
+		*chr = tolower(*chr);
+	} while (*chr == 'n' && *chr == 'N');
+}
+while (*chr == 'y')
+	;
+cout << endl;
+system("pause");
+return 0;
 }
 ///////////////////////////
 char getChoice(char *chr)
