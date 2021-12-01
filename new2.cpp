@@ -76,8 +76,10 @@ int main()
 		{
 			cout << "\nDo you want to try again?[y/n]: ";
 			cin >> *chr;
-			chr = tolower*(chr);
-		} while (*chr == 'n');
+			*chr = tolower(*chr);
+		} while (*chr == 'n' && *chr == 'N');
+
+} while (*chr == 'y');
 			cout
 		<< endl;
 	system("pause");
