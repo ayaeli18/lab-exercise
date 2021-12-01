@@ -47,12 +47,16 @@ int main()
 			cout << "\nChoice[1]: Grade Elimination" << endl;
 			cout << "enter " << size << " grades" << endl;
 			getInput(grade);
+           
+		    gsum = getSum(grade);
+			glow = getLow(grade);
 
-			cout << "\nsum = " << getSum(grade); //getsum
+			cout << "\nsum = " << gsum; //getsum
 
-			cout << "\nlowest = " << getLow(grade); //getLow
-
-			cout << "\naverage = " << getSum(grade)/10;
+			cout << "\nlowest = " << glow; //getLow
+            
+			ave = gsum - glow / 9.0;
+			cout << "\naverage = " << ave;
 			//NOTE ALL CODES MUST USE pointer variables –input,process and //output
 		}
 		break;
@@ -73,8 +77,16 @@ int main()
 	{
 		cout << "\nDo you want to try again?[y/n]: ";
 		cin >> answer;
-	} while (answer == 'n' && answer == 'N');
-
+	} while (answer != 'y' && answer != 'n' && answer != 'Y' && answer != 'N');
+	if (answer == 'n' || answer == 'N')
+	{
+		choice = 'n';
+		cout << "leaving the program now...." << endl;
+	}
+	if (answer == 'y' || answer == 'Y') //IF 'Y/y' GO RETURN TO MENU
+	{
+		getChoice(chr);
+	}
 	cout << endl;
 	system("pause");
 	return 0;
@@ -105,7 +117,7 @@ char getChoice(char *chr)
 //////////////////////////////
 void getInput(double *input)
 {
-	cout << "enter 10 grades \n";
+	
 	for (i = 0; i < size; i++)
 	{
 		cout << "grade[" << i << "]:";
@@ -125,12 +137,8 @@ double getSum(double *sum)
 	double add = 0;
 
 	//add code here
-
-	add = *(sum + 0);
 	for (i = 0; i < size; i++)
 	{
-
-		if (*(sum + i) > add)
 			add = *(sum + i);
 	}
    return add;
