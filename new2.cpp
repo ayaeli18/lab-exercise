@@ -15,14 +15,13 @@ double getSum(double *sum);	  //compute for the sum of 10 grades
 //choices and try again
 char getChoice(char *ch); //display the menu of choices and input the choice of the user
 
-
 int main()
 {
 
 	//add only declaration here
-     
+
 	char opt, choice, answer;
-	char* chr;
+	char *chr;
 	do
 	{
 
@@ -38,7 +37,7 @@ int main()
 			double *plow, *psum, *pave;
 			double gsum, glow;
 			double ave;
-           
+
 			system("cls");
 			//add declaration here
 
@@ -47,21 +46,21 @@ int main()
 			cout << "\nChoice[1]: Grade Elimination" << endl;
 			cout << "enter " << size << " grades" << endl;
 			getInput(grade);
-           
-		    gsum = getSum(grade);
+
+			gsum = getSum(grade);
 			glow = getLow(grade);
 
 			cout << "\nsum = " << gsum; //getsum
 
 			cout << "\nlowest = " << glow; //getLow
-            
+
 			ave = gsum - glow / 9.0;
 			cout << "\naverage = " << ave;
 			//NOTE ALL CODES MUST USE pointer variables –input,process and //output
 		}
 		break;
 		case '2':
-			
+
 			break;
 		case '3':
 			cout << "goodbye for now....\n";
@@ -72,22 +71,16 @@ int main()
 
 		//Add code here
 
-	} while (choice == 'y');
-	do
-	{
-		cout << "\nDo you want to try again?[y/n]: ";
-		cin >> answer;
-	} while (answer != 'y' && answer != 'n' && answer != 'Y' && answer != 'N');
-	if (answer == 'n' || answer == 'N')
-	{
-		choice = 'n';
-		cout << "leaving the program now...." << endl;
-	}
-	if (answer == 'y' || answer == 'Y') //IF 'Y/y' GO RETURN TO MENU
-	{
-		getChoice(chr);
-	}
-	cout << endl;
+		do
+		{
+			cout << "\nDo you want to try again?[y/n]: ";
+			cin >> answer;
+			opt = getChoice(chr);
+		} while (answer == 'y' || answer =='Y');
+
+	} while (answer == 'n' && answer == 'N')
+			cout
+		<< endl;
 	system("pause");
 	return 0;
 }
