@@ -70,15 +70,14 @@ int main()
 		}
 
 		//Add code here
+        } while (*chr != 'n');
 
 		do
 		{
 			cout << "\nDo you want to try again?[y/n]: ";
-			cin >> answer;
-			opt = getChoice(chr);
-		} while (answer == 'y' || answer =='Y');
-
-	} while (answer == 'n' && answer == 'N')
+			cin >> *chr;
+			chr = tolower*(chr);
+		} while (*chr == 'n');
 			cout
 		<< endl;
 	system("pause");
