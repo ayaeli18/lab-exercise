@@ -59,7 +59,8 @@ int main()
 
 			cout << "\nlowest = " << glow; //getLow
 
-			ave = gsum - glow / 9.0;
+			ave = (gsum - glow) / 9.0;
+			cout << fixed << setprecision(2);
 			cout << "\naverage = " << ave;
 
 			//NOTE ALL CODES MUST USE pointer variables –input,process and //output
@@ -165,7 +166,7 @@ void MperG()
 	cout << "\nCOMPUTING FOR MPG : miles per gallon...\n";
 	bool ans = true;
 
-	while (true)
+	while (ans)
 	{
 		cout << "Specify the size of the array: ";
 		cin >> msize;
@@ -180,29 +181,33 @@ void MperG()
 			continue;
 
 		} //end catch
-
+       ans = false;
 	} //end while
 
+    cout << "MILES\n";
 	for (ctr = 0; ctr < msize; ctr++)
 	{
-		cout << "miles[" << ctr << "]: ";
-		cin >> *(milPtr + ctr);
-
-		try
+		while (ans)
 		{
-			if (*(milPtr + ctr) < 100 || *(milPtr + ctr) > 250)
-				throw *(milPtr + ctr);
-		}
-		catch (double e)
-		{
-			cout << e << "is invalid!.. 100-250 only";
+			cin >> ans;
+			cout << "miles[" << ctr << "]: ";
+			cin >> *(milPtr + ctr);
 
-			cout << "\nreenter a new value \n\n";
-			continue;
-		}
+			try
+			{
+				if (*(milPtr + ctr) < 100 || *(milPtr + ctr) > 250)
+					throw *(milPtr + ctr);
+			}
+			catch (double e)
+			{
+				cout << e << "is invalid!.. 100-250 only";
 
-	} //end while
- 
+				cout << "\nreenter a new value \n\n";
+				continue;
+			}
+           ans = false;
+		} //end while
+	}	  // loop for miles
 
  /*********************************************************/
  cout << "GALLONS\n";
@@ -226,8 +231,8 @@ void MperG()
 		 cout << "\nreenter a new value\n\n";
 		 continue;
 		 } //end catch
-
 	    } //end while
+		ans = false;
     }//loop for gallons
 
 MilesPerrGallon(milPtr, galPtr, msize);
