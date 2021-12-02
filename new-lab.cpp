@@ -172,7 +172,7 @@ void MperG()
 		cin >> msize;
 		try
 		{
-			if (msize > 5 || msize < 15)
+			if (msize < 5 || msize > 15)
 				throw msize;
 		} //end try
 		catch (int e)
@@ -200,7 +200,7 @@ void MperG()
 			}
 			catch (double e)
 			{
-				cout << e << "is invalid!.. 100-250 only";
+				cout << e << " is invalid!.. 100-250 only";
 
 				cout << "\nreenter a new value \n\n";
 				continue;
@@ -227,12 +227,12 @@ void MperG()
 		 } //end try
 		 catch (double e)
 		 {
-		 cout << e << "is invalid!.. 5-25 only";
+		 cout << e << " is invalid!.. 5-25 only";
 		 cout << "\nreenter a new value\n\n";
 		 continue;
 		 } //end catch
+		 ans = false;
 	    } //end while
-		ans = false;
     }//loop for gallons
 
 MilesPerrGallon(milPtr, galPtr, msize);
